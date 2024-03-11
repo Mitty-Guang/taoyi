@@ -1,0 +1,40 @@
+spring:
+  redis:
+    lettuce:
+      pool:
+        max-wait: -1ms
+        max-idle: 8
+        max-active: 8
+        min-idle: 0
+    database: 2
+    host: 39.101.122.176
+    port: 6379
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.101.122.176/user
+    username: root
+    password: 1122315yx
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1
+#    sentinel:
+#      transport:
+#        dashboard: localhost:8080
+#      web-context-unify: false
+  application:
+    name: ceramics-user
+  mybatis-plus:
+    global-config:
+      db-config:
+        id-type: auto
+  rabbitmq:
+    host: 39.101.122.176 # rabbitMQ的ip地址
+    port: 5672 # 端口
+    username: itcast
+    password: 123321
+    virtual-host: /
+    publisher-confirms: true
+    publisher-returns: true
+server:
+  port: 8000
