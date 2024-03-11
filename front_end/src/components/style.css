@@ -1,0 +1,298 @@
+/* 设置浏览器滚动条的样式 */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 0, 0, 0.4);
+}
+
+/* 主页 */
+
+body {
+  margin: 0%;
+  background-color: #f0eae2;
+}
+
+.el-menu-demo {
+  width: 100%;
+  line-height: 5vh;
+}
+
+.el-container {
+  padding: 0 auto;
+  ;
+}
+
+.el-header {
+  padding-left: 0%;
+  padding-right: 0%;
+  height: 60px;
+}
+
+.el-aside {
+  width: 22vh !important;
+  height: 94.5vh !important;
+}
+
+.el-main {
+  background-color: #f0eae2;
+
+}
+
+.el-footer {
+  display: none;
+}
+
+/* .el-aside .el-sub-menu__icon-arrow {
+  color: black;
+  font-weight: bold;
+}*/
+
+/* .el-sub-menu .el-sub-menu__title {
+  background: #c6ad8b !important;
+  color: #333333 !important;
+  font-size: large !important;
+  font-weight: bold !important;
+} */
+
+/* .el-aside /deep/ .el-sub-menu__title {
+  background: #c6ad8b !important;
+  color: #333333 !important;
+  font-size: large !important;
+  font-weight: bold !important;
+} */
+.el-aside .el-menu-item {
+  background: #e7dccc !important;
+  color: #1b1a18 !important;
+}
+
+.el-aside .el-menu-item:hover {
+  background: #e5e7e9 !important;
+  color: #c6ad8b !important;
+  font-weight: bold !important;
+}
+
+/* .el-aside .el-sub-menu__title:hover {
+  background: #c6ad8b !important;
+  color: #c6ad8b !important;
+} */
+.el-aside .el-menu-item.is-active {
+  background: #e5e7e9 !important;
+  color: #c6ad8b !important;
+  font-weight: bold !important;
+}
+
+.el-aside .el-menu-item-group__title {
+  padding: 0% !important;
+}
+
+
+.el-aside .yuan {
+  background: #c6ad8b !important;
+  color: #333333;
+  font-weight: bold !important;
+  font-size: 130% !important;
+}
+
+.el-aside .yuan-active {
+  background: #e5e7e9 !important;
+  color: #c6ad8b !important;
+  font-weight: bold !important;
+  font-size: 130% !important;
+}
+
+.el-aside .xdty {
+  background: #c6ad8b !important;
+  color: #333333;
+  font-weight: bold !important;
+  font-size: 130% !important;
+}
+
+.el-aside .xdty-active {
+  background: #e5e7e9 !important;
+  color: #c6ad8b !important;
+  font-weight: bold !important;
+  font-size: 130% !important;
+}
+
+.el-aside::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.el-aside::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0;
+}
+
+.menuside {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+
+.el-main {
+  padding: 0%;
+}
+
+.breadcrumb {
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-left: 0px;
+  width: 100%;
+  height: 5vh;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bread {
+  padding-left: 2vh;
+}
+
+.el-container .el-main .text {
+  margin-left: 5vh;
+  margin-right: 5vh;
+  height: 85vh;
+  background-color: #ece4d9;
+  border-radius: 5px;
+  box-shadow: darkgrey 0px 0px 30px 5px;
+  overflow-y: auto;
+  background-image: url(../assets/images/taoci_backgroud.png);
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.text::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 10px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+
+.text::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  background-color: rgb(206, 206, 206);
+  background-image: -webkit-linear-gradient(45deg,
+      rgba(255, 255, 255, 0.2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.2) 75%,
+      transparent 75%,
+      transparent);
+}
+
+.text::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #ededed;
+  border-radius: 10px;
+}
+
+.title {
+  padding-left: 5vh;
+  padding-right: 5vh;
+  font-family: "微软雅黑";
+  /*若电脑不支持宋体，则用仿宋，若不支持仿宋，则在sans-serif中找*/
+  font-weight: bold;
+  font-size: 150%;
+  color: black;
+  /*字体颜色*/
+  opacity: 1;
+  /*字体的透明度：1：默认样式，0：全透明*/
+}
+
+.title2 {
+  padding-left: 5vh;
+  padding-right: 5vh;
+  font-family: "微软雅黑";
+  /*若电脑不支持宋体，则用仿宋，若不支持仿宋，则在sans-serif中找*/
+  font-weight: bold;
+  font-size: 140%;
+  color: black;
+  /*字体颜色*/
+  opacity: 1;
+  /*字体的透明度：1：默认样式，0：全透明*/
+}
+
+.title3 {
+  padding-left: 7vh;
+  padding-right: 5vh;
+  font-family: "微软雅黑";
+  /*若电脑不支持宋体，则用仿宋，若不支持仿宋，则在sans-serif中找*/
+  font-weight: bold;
+  font-size: 130%;
+  color: black;
+  /*字体颜色*/
+  opacity: 1;
+  /*字体的透明度：1：默认样式，0：全透明*/
+}
+
+.p_main {
+  padding-left: 10vh;
+  padding-right: 10vh;
+  line-height: 1.8;
+  font-family: "华文黑体";
+  /*若电脑不支持宋体，则用仿宋，若不支持仿宋，则在sans-serif中找*/
+  font-weight: 250;
+  font-size: 120%;
+  color: black;
+  /*字体颜色*/
+  opacity: 1;
+  /*字体的透明度：1：默认样式，0：全透明*/
+}
+
+.menutitle {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+}
+
+/* .el-breadcrumb__item {
+  backgroudcolor: red;
+} */
+
+/* .el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
+} */
+.el-icon-star-off {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.el-icon-star-on {
+  font-size: 50px;
+  color: orange;
+  cursor: pointer;
+}
+
+.el-footer {
+  display: none;
+}
+
+/* .el-footer {
+  height: 0% !important;
+} */

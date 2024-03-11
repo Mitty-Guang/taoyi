@@ -1,0 +1,261 @@
+<template>
+  <el-main class="news">
+    <el-header>
+      <el-menu :default-active="$router.path" class="el-menu-demo" mode="horizontal" @select="handleSelect"
+        background-color="#c6ad8b" text-color="#000" active-text-color="#000" router>
+        <el-menu-item index="/index" style="float:left;">
+          <img src="../../assets/images/taoci_black.png" style="height: 80%; " />
+        </el-menu-item>
+        <div style="position: absolute;left: 50%;top:50%;transform: translate(-50%,-50%);">
+          <el-menu-item index="/news" style="float: left;">
+            <span class="menutitle">新闻</span>
+          </el-menu-item>
+          <el-submenu index="3" style="float: left;">
+            <template slot="title">
+              <span class="menutitle">介绍</span>
+            </template>
+            <el-menu-item index="/history">
+              <span class="menutitle" style="font-size: 120%;">历史</span>
+            </el-menu-item>
+            <el-menu-item index="/classes">
+              <span class="menutitle" style="font-size: 120%;">分类</span>
+            </el-menu-item>
+          </el-submenu>
+          <el-menu-item index="4" style="float: left;">
+            <span class="menutitle">教程</span>
+          </el-menu-item>
+          <el-menu-item index="5" style="float: left;"><span class="menutitle">论坛</span></el-menu-item>
+        </div>
+        <el-menu-item index="/user" style="float:right;">
+          <img src="../../assets/logo.png" style="height: 80%; " />
+        </el-menu-item>
+      </el-menu>
+    </el-header>
+    <div class="news-main">
+      <div class="news-article">
+        <div class="news-title">
+          <div></div>
+          <h1>{{ news.title }}</h1>
+          <h4>
+            {{ news.date }} 点赞{{ news.up }} 浏览{{ news.click }} | 来源：{{
+                news.source
+            }}
+          </h4>
+        </div>
+        <el-divider></el-divider>
+        <div class="news-text">
+          <p>
+            抚顺大官窑陶瓷制作技艺是抚顺市非物质文化遗产。6月16日，沈阳工学院部分艺术类专业和选修陶瓷制作课的学生，来到抚顺大官窑陶瓷工作室，在老师指导下体验陶瓷泥胚制作、陶瓷绘画等工艺，感受陶瓷制作魅力。
+          </p>
+          <img src="https://gulimall-nkhyx.oss-cn-beijing.aliyuncs.com/news/20220618-1.png" alt="" />
+          <p>6月16日，在抚顺大官窑陶瓷工作室，一位学生修复陶瓷泥胚。</p>
+          <img src="https://gulimall-nkhyx.oss-cn-beijing.aliyuncs.com/news/20220618-2.png" alt="" />
+          <p>6月16日，在抚顺大官窑陶瓷工作室，一位学生体验陶瓷绘画。</p>
+          <img src="https://gulimall-nkhyx.oss-cn-beijing.aliyuncs.com/news/20220618-3.png" alt="" />
+          <p>
+            6月16日，在抚顺大官窑陶瓷工作室，老师（左）指导学生体验陶瓷泥胚制作。
+          </p>
+          <img src="https://gulimall-nkhyx.oss-cn-beijing.aliyuncs.com/news/20220618-4.png" alt="" />
+          <p>6月16日，在抚顺大官窑陶瓷工作室，一位学生体验陶瓷绘画。</p>
+          <img src="https://gulimall-nkhyx.oss-cn-beijing.aliyuncs.com/news/20220618-5.png" alt="" />
+          <p>6月16日，在抚顺大官窑陶瓷工作室，学生们体验陶瓷泥胚制作。</p>
+          <img src="https://gulimall-nkhyx.oss-cn-beijing.aliyuncs.com/news/20220618-6.png" alt="" />
+          <p>
+            6月16日，在抚顺大官窑陶瓷工作室，老师（右）给学生讲解陶瓷泥胚修复工艺。
+          </p>
+          <img src="https://gulimall-nkhyx.oss-cn-beijing.aliyuncs.com/news/20220618-7.png" alt="" />
+          <p>6月16日，在抚顺大官窑陶瓷工作室，老师给学生们讲解陶瓷绘画技艺。</p>
+          <img src="https://gulimall-nkhyx.oss-cn-beijing.aliyuncs.com/news/20220618-8.png" alt="" />
+          <p>6月16日，在抚顺大官窑陶瓷工作室，一位学生体验陶瓷泥胚制作。</p>
+          <img src="https://gulimall-nkhyx.oss-cn-beijing.aliyuncs.com/news/20220618-9.png" alt="" />
+          <p>
+            6月16日，在抚顺大官窑陶瓷工作室，老师（左一）给学生们讲解陶瓷艺术品制作过程。
+          </p>
+        </div>
+        <div class="news-bottom">
+          <el-button plain @click="on()" width="20px">
+            <img src="https://gulimall-nkhyx.oss-cn-beijing.aliyuncs.com/news/like-f.svg" alt="123" width="18px"
+              v-if="like" />
+            <img src="https://gulimall-nkhyx.oss-cn-beijing.aliyuncs.com/news/like-b.svg" alt="123" width="18px"
+              v-else />
+            <div>点赞</div>
+          </el-button>
+        </div>
+      </div>
+      <el-card class="news-list-hot">
+        <div slot="header" class="clearfix">
+          <span>热点新闻</span>
+        </div>
+        <a href="#" class="text" v-for="news in news_hot" :key="news.id" v-on:click="news_turn(news.text)">
+          <div>{{ news.title }}</div>
+        </a>
+      </el-card>
+    </div>
+  </el-main>
+</template>
+<style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.news {
+  background-color: #f0eae2 !important;
+  color: #333;
+  height: 100vh;
+}
+
+.news .news-main {
+  width: 1100px;
+  background-color: rgb(255, 255, 255);
+  margin: 50px auto;
+}
+
+.news .news-main .news-article {
+  float: left;
+  margin-top: 20px;
+  width: 55%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+}
+
+.news .news-main .news-article h1 {
+  height: 60px;
+  text-align: center;
+}
+
+.news .news-main .news-article h4 {
+  font-size: 14px;
+  color: rgb(125, 125, 125);
+  text-indent: 2em;
+  height: 35px;
+  margin-top: 15px;
+}
+
+.news .news-main .news-article p {
+  font-size: 18px;
+  text-indent: 2em;
+}
+
+.news .news-main .news-article .news-text img {
+  width: 100%;
+}
+
+.news a {
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+}
+
+.news a:hover {
+  color: rgb(67, 140, 213);
+  text-decoration: none;
+}
+
+.news .news-list-hot .clearfix:before,
+.news .news-list-hot .clearfix:after {
+  display: table;
+  content: "";
+}
+
+.news .news-list-hot .clearfix:after {
+  clear: both;
+}
+
+.news .news-list-hot .text {
+  font-size: 15px;
+  line-height: 40px;
+  height: 40px;
+  width: 230px;
+  margin-bottom: 10px;
+}
+
+.news .news-list-hot {
+  margin-top: 20px;
+  width: 33%;
+  float: right;
+}
+
+.news .news-bottom {
+  height: 20px;
+  width: 100px;
+  float: right;
+  margin: 30px;
+  margin-right: 0px;
+}
+
+.news .news-bottom div {
+  float: right;
+  font-size: 16px;
+  line-height: 18px;
+  height: 16px;
+}
+</style>
+<script>
+export default {
+  data() {
+    return {
+      like: false,
+      news_hot: [],
+      news: [],
+      id: 7,
+      username: document.cookie.replace("username=", "")
+    };
+  },
+  methods: {
+    on() {
+      if (this.username == '') {
+        this.$message('请登录');
+        return;
+      }
+      this.like = !this.like;
+      var _this = this;
+      this.$http.get("http://39.101.122.176:88/news/like?id="
+        + _this.id
+        + "&username="
+        + document.cookie.replace("username=", "")
+      ).then(res => {
+        console(res);
+      });
+    },
+    news_gethot() {
+      var _this = this;
+      this.$http.get("http://39.101.122.176:88/news/hot").then(res => {
+        _this.news_hot = res.data.data;
+        console(res);
+      });
+    },
+    news_getone() {
+      var _this = this;
+      if (this.username == '') {
+        this.$http.get("http://39.101.122.176:88/news/one?id="
+          + _this.id
+        ).then(res => {
+          _this.news = res.data.data;
+          console(res);
+        });
+      }
+      else {
+        this.$http.get("http://39.101.122.176:88/news/one?id="
+          + _this.id
+          + "&username="
+          + document.cookie.replace("username=", "")
+        ).then(res => {
+          _this.news = res.data.data;
+          _this.like = res.data.data.islike;
+          console(res);
+        });
+      }
+
+    },
+    news_turn(url) {
+      console.log(url);
+      this.$router.push({ path: url });
+    }
+  },
+  mounted() {
+    this.news_gethot();
+    this.news_getone();
+  }
+};
+</script>
