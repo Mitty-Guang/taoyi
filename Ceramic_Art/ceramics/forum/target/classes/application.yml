@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.101.122.176/forum
+    username: root
+    password: 1122315yx
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1
+  application:
+    name: ceramics-forum
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+server:
+  port: 7000
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 300000
+        readTimeout: 300000

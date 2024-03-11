@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI5tHmVuqzcAFcWRbxi7QT
+      secret-key: AvLLSV9ZAzQN67GXQp9cmJneWhb61z
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+        bucket: gulimall-nkhyx
+  application:
+    name: ceramics-third
+server:
+  port: 30000

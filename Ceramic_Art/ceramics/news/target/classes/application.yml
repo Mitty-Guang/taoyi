@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.101.122.176/news
+    username: root
+    password: 1122315yx
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1
+  application:
+    name: ceramics-news
+  session:
+    store-type: redis
+    redis:
+      flush-mode: on_save
+      namespace: test_session
+    timeout: 3600s
+  redis:
+    port: 6379
+    host: 39.101.122.176
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+server:
+  port: 9000

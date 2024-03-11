@@ -1,0 +1,15 @@
+com\example\forum\Controller\CommentController.class
+com\example\forum\Service\imp\CommentService.class
+com\example\forum\Service\imp\PostService.class
+com\example\forum\Config\MybatisPlusConfig.class
+com\example\forum\Controller\PostController.class
+com\example\forum\dao\UserPost.class
+com\example\forum\dao\Post.class
+com\example\forum\ForumApplication.class
+com\example\forum\mapper\PostMapper.class
+com\example\forum\mapper\CommentMapper.class
+com\example\forum\Service\PostInterface.class
+com\example\forum\dao\Comment.class
+com\example\forum\Config\WebMvcConfig.class
+com\example\forum\Feign\UserFeign.class
+com\example\forum\Service\CommentInterface.class

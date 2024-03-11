@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.101.122.176/user
+    username: root
+    password: 1122315yx
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1
+  application:
+    name: ceramics-user
+  mybatis-plus:
+    global-config:
+      db-config:
+        id-type: auto
+server:
+  port: 8000

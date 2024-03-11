@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: forum
+          uri: lb://ceramics-forum
+          predicates:
+            - Path=/forum/**
+        - id: user
+          uri: lb://ceramics-user
+          predicates:
+            - Path=/user/**
+        - id: news
+          uri: lb://ceramics-news
+          predicates:
+            - Path=/news/**
+        - id: third
+          uri: lb://ceramics-third
+          predicates:
+            - Path=/third/**
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1
+  application:
+    name: ceramics-gateway
+server:
+  port: 88

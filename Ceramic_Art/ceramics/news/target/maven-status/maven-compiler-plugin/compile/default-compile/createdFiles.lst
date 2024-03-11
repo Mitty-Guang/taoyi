@@ -1,0 +1,8 @@
+com\ceramics\news\Config\MybatisPlusConfig.class
+com\ceramics\news\Config\WebMvcConfig.class
+com\ceramics\news\mapper\Newsmapper.class
+com\ceramics\news\dao\News.class
+com\ceramics\news\Controller\NewsController.class
+com\ceramics\news\NewsApplication.class
+com\ceramics\news\Service\NewsInterface.class
+com\ceramics\news\Service\imp\NewsService.class
